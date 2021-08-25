@@ -2,15 +2,8 @@
 """
 Script for analyzing WRAQ data for voluntary mouse activity in home cage
 
-author: Kasaragod
-email: deepa@hiroshima-u.ac.jp  , For bug reports, questions and feedback
-license: GPL-3.0 License
-     
-Please cite the following paper if you adopt this code for your research.   
-Zhu et al., A novel microcontroller-based system for the wheel running activity in mice (2021). 
+Details redacted for BLIND REVIEW
 
-Please use or modify the file freely for your purpose, keeping the above information. 
-    
 """
 
 import tkinter
@@ -161,30 +154,55 @@ class WRAQ(object):
         fbase = os.path.splitext(fin)[0]
         fext = os.path.splitext(fin)[1]
         fout = fbase + '_padded' + fext
-        
-        df = pd.read_csv(fin) # to keep the header
-        #print(df)
-        df.created=pd.to_datetime(df.created)
-        df.columns = ['created', 'd1', 'd2', 'd3',
-                      'd4', 'd5', 'd6', 'd7', 'd8']
-        df = df.sort_values('created')
-        df = df.set_index('created')
-        if (timezone == 'UTC'):
-            df.index = pd.to_datetime(df.index) + pd.DateOffset(hours=9)
-            ts_onset = pd.Timestamp(df.index[0].date()).tz_localize('UTC')
-            ts_onset = ts_onset - pd.DateOffset(1) + pd.DateOffset(hours=9)
-        if (timezone == 'JST'):
-            df.index = pd.to_datetime(df.index).tz_localize(None)
-            ts_onset = pd.Timestamp(df.index[0].to_pydatetime()).tz_localize(None)
-            
-        row_df = pd.DataFrame({'d1':[0], 'd2':[0]}, index=[ts_onset])
-        df = pd.concat([row_df, df])
-        newd1 = df.resample('5T')['d1'].sum()
-        newd2 = df.resample('5T')['d2'].sum()
-        df = pd.concat([newd1, newd2], axis=1)
-        
-        df.to_csv(fout, index=True, header=False)      
-        
+        if (self.wraqtype == 'wraq'):
+            self.read_csvtopandas()
+            df = self.df
+            if (len(df.columns) == 3):
+                df.columns = ['DateandTime', 'rev', 'illum']
+                
+            else:
+                df.columns = ['Date', 'Time', 'rev', 'illum']
+                df['Date'] = pd.to_datetime(df['Date'].astype(str), format='%Y%m%d')
+                df['Time'] = pd.to_datetime(df['Time']).dt.time
+                df['DateandTime'] = [datetime.datetime.combine(a, b) for a, b in zip(df['Date'], df['Time'])]
+                df['Date'] = pd.to_datetime(df['Date'], errors='coerce')
+            if (startdatetime == '0'):
+                df1 = df.copy()
+            else:
+                df1 = df.copy()
+                df1 = df.iloc[df.index[df['DateandTime'] == startdatetime].values[0]:]
+                df1.reset_index(inplace = False)
+            df1.to_csv(fout, index=False, header=False)  
+                    
+        if (self.wraqtype == 'wraq-wifi'):
+            df = pd.read_csv(fin) # to keep the header
+            #print(df)
+            df.created=pd.to_datetime(df.created)
+            df.columns = ['created', 'd1', 'd2', 'd3',
+                          'd4', 'd5', 'd6', 'd7', 'd8']
+            df = df.sort_values('created')
+            df = df.set_index('created')
+            if (timezone == 'UTC'):
+                df.index = pd.to_datetime(df.index) + pd.DateOffset(hours=9)
+                ts_onset = pd.Timestamp(df.index[0].date()).tz_localize('UTC')
+                ts_onset = ts_onset - pd.DateOffset(1) + pd.DateOffset(hours=9)
+            if (timezone == 'JST'):
+                df.index = pd.to_datetime(df.index).tz_localize(None)
+                ts_onset = pd.Timestamp(df.index[0].to_pydatetime()).tz_localize(None)
+                
+            df1 = df.copy()
+            df1.reset_index(inplace = True)
+            if (startdatetime != '0'):
+                df1 = df1.iloc[df1.index[df1['created'] == startdatetime].values[0]:]
+                df1.reset_index(inplace = False)
+                              
+            row_df = pd.DataFrame({'d1':[0], 'd2':[0]}, index=[ts_onset])
+            df = pd.concat([row_df, df])
+            newd1 = df.resample('5T')['d1'].sum()
+            newd2 = df.resample('5T')['d2'].sum()
+            df = pd.concat([newd1, newd2], axis=1)
+            df1.to_csv(fout, index=False, header=False)  
+ 
         print(fin + ': successfully converted into ' + fout)
 
     def distance_day(self, rev):  

@@ -2,15 +2,8 @@
 """
 Script for analyzing WRAQ data to obtain per day activity output of voluntary mouse activity in home cage.
 
-author: Deepa Kasaragod
-email: deepa@hiroshima-u.ac.jp  , For bug reports, questions and feedback
-license: GPL-3.0 License
-    
-Please cite the following paper if you adopt this code for your research.   
-Zhu et al., A novel microcontroller-based system for the wheel running activity in mice (2021). 
+Details redacted for BLIND REVIEW
 
-Please use or modify the file freely for your purpose, keeping the above information. 
-    
 """
 
 from WRAQ import WRAQ

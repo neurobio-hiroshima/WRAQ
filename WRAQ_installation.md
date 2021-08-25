@@ -1,7 +1,7 @@
 ## WRAQ installation
 1. Follow the Arduino IDE setup for [Adafruit Adalogger]( https://learn.adafruit.com/adafruit-feather-m0-adalogger/using-with-arduino-ide)
 2. In Arduino IDE, choose ```[Sketch] - [Include Library] - [Library manager]``` and search using "RTCZero" as a keyword. Then, install ```RTCZero``` library. 
-3. Open the firmware [WRAQ.ino](firmware/WRAQ_WiFi/WRAQ.ino) with Arduino IDE and edit it to set the internal real time clock by editing time information including year, month, day, hours, minutes and seconds. 
+3. Open the firmware [WRAQ.ino](firmware/WRAQ/WRAQ.ino) with Arduino IDE and edit it to set the internal real time clock by editing time information including year, month, day, hours, minutes and seconds. 
 4.  Upload the firmware to your Adafruit Adalogger through USB connection. 
 5.  Unplug the USB cable and connect WRAQ to the AA battery or lipoly battery and restart it by pushing the reset button on Adalogger.
 6.  Cover the bottom of the main body with 3D-printed part and seal with peelable adhesive. 

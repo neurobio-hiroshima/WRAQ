@@ -16,8 +16,8 @@
 
 2. Make an account on [Ambient Data Visualization service](https://ambidata.io/) and generate the channel to keep the uploaded data. The channel ID and write key information will be used in the following step. 
 3. In Arduino IDE, choose ```[Sketch] - [Include Library] - [Library manager]``` and search using "Ambient" as a keyword. Then, install ```Ambient ESP32 ESP8226 lib```. 
-4. In Arduino IDE, choose ```[Sketch] - [Include Library] - [Library manager]``` and search using "RTClib" as a keyword. Then, install "A fork of Jeelab's fantastic RTC library". 
-5. 5.	Edit the Arduino firmware [WRAQ_WiFi.ino](firmware/WRAQ_WiFi/WRAQ_WiFi.ino) on Arduino IDE to describe the channel ID / write key information for Ambient Data Visualization as well as WiFi SSID and its password. 
+4. In Arduino IDE, choose ```[Sketch] - [Include Library] - [Library manager]``` and search using "RTClib" as a keyword. Then, install ```A fork of Jeelab's fantastic RTC library```. 
+5. Edit the Arduino firmware [WRAQ_WiFi.ino](firmware/WRAQ_WiFi/WRAQ_WiFi.ino) on Arduino IDE to describe the channel ID / write key information for Ambient Data Visualization as well as WiFi SSID and its password. 
 6. Upload the firmware to your DFRobot Firebeetle ESP32 through USB connection. 
 7. Unplug the USB cable and connect WRAQ to the AA battery or lipoly battery and restart it by pushing the reset button on Firebeetle. 
 8. Cover the bottom of the main body with 3D-printed part and seal with peelable adhesive. 

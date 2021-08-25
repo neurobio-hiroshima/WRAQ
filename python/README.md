@@ -5,8 +5,8 @@ WRAQ is an acronym for  Wheel Running Activity acQuisition a microcontroller dri
 <img src="docs/wheelrunner-flow.jpg?format=800w" width="80%">
 </p>
 
-# Setting-Up Details 
-The instructions and code were tested in Windows 10 environment. Although not tested, the instructions should be applicable to Mac and Linux environments as well. 
+# Getting Started 
+Although these instructions were tested in Windows 10 operating system, these should be equally applicable to Linux and Mac OSX operating systems. 
 
 1. To run the scripts included here, installing Python 3.7 is recommended. Easiest way to install Python would be to install [Anaconda](https://www.anaconda.com/distribution/). 
 
@@ -16,11 +16,11 @@ The instructions and code were tested in Windows 10 environment. Although not te
 
 4. To create ```wraqenv``` for the first time, open Anaconda command prompt and type ```conda env create -f PATH/requirements.yml```. Please note that the ```PATH ``` refers to the absolute or relative path of the ```requirements.yml``` file. Once the environment is created, to run the python scripts each time activate the environment using ```conda activate wraqenv```. To deactivate the environment, type ```conda deactivate```. 
 
-# Instructions
+# Running the Scripts 
 
 1. To run ```main_wraq2actj.py ```, Open Anaconda command prompt and first activate ```wraqenv```. Then type ```python main_wraq2actj.py wraqtype ZT``` . wraqtype takes the values "wraq" or "wraq-wifi" and ZT should be zeitgeiber 12 starting time to be input in the format ```"YYYY-MM-DD HH:MM:SS"``` for example ```"2021-08-20 23:05:01"```. If no zeitgeber time correction is needed, input the value as ```"0"```. A dialog box opens to chose the .csv file to be analyzed. A separated csv file with ```padded.csv``` concatenated name is saved as ActogramJ compatible csv file. 
 
-1. To run ```main_analyzer.py ```, Open Anaconda command prompt and first activate ```wraqenv```. Then type ```python main_analyzer.py.py wraqtype ZT``` . wraqtype takes the values "wraq" or "wraq-wifi" and ZT should be zeitgeiber 12 starting time to be input in the format ```"YYYY-MM-DD HH:MM:SS"``` for example ```"2021-08-20 23:05:01"```. If no zeitgeber time correction is needed, input the value as ```"0"```. A dialog box opens to chose the .csv file to be analyzed. The output file with average per day activity is saved as a .csv file in ```out``` folder in the data directory with filename relfecting the day of analysis. 
+1. To run ```main_analyzer.py ```, Open Anaconda command prompt and first activate ```wraqenv```. Then type ```python main_analyzer.py.py wraqtype ZT``` . wraqtype takes the values "wraq" or "wraq-wifi" and ZT should be zeitgeiber 12 starting time to be input in the format ```"YYYY-MM-DD HH:MM:SS"``` for example ```"2021-08-20 23:05:01"```. If no zeitgeber time correction is needed, input the value as ```"0"```. A dialog box opens to chose the .csv file to be analyzed. The output file with average per day activity is saved as a .csv file in ```out``` folder in the data directory with filename reflecting the day of analysis. 
 
 # References
 [1] Schmid B, Helfrich-Förster C, Yoshii T: [**A new ImageJ plugin "ActogramJ" for chronobiological analyses.** ](http://www.google.com/url?q=http%3A%2F%2Fjbr.sagepub.com%2Fcontent%2F26%2F5%2F464.short&sa=D&sntz=1&usg=AFQjCNHEsgg-eoUtwfQRLuU2vIT9riFYgQ)J Biol Rhythms 2011, **26**:464-467. 

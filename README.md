@@ -1,5 +1,5 @@
 # About WRAQ
-* New@20240802: Intruction to build WRAQ hardware now available [here](WRAQbuilding20231121.pdf)
+* New@20240802: Instruction to build WRAQ hardware now available [here](WRAQbuilding20231121.pdf)
 
 WRAQ is an acronym that stands for Wheel Running Activity acQuisition, a microcontroller driven open-source stand-alone solution to monitor wheel running activity of mice at the home cage<sup>[1](#References)</sup>. This repository includes the [detailed guide](WRAQ_installation.md) for installing the integrated developmental environment (IDE) and dependent libraries for building and setting up WRAQ systems - WRAQ and WRAQ-Wifi. WRAQ and WRAQ-WiFi are based on Adafruit Adalogger and DFRobot FireBeetle ESP32 connected to the 4- and 8-bit binary counters receiving the signal from reed switch attached to the 5-inch flying saucer ([Ware Manufacturing Inc., Phoenix, AZ](https://www.warepet.com/)), respectively. Please refer to the instruction to build WRAQ hardware available [here](WRAQbuilding20231121.pdf).
 

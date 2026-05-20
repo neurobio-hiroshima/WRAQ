@@ -174,6 +174,16 @@
               "icon": "git-pull-request",
               "title": "Source Control"
             }
+          },
+          {
+            "id": "6109f920c06033b1",
+            "type": "leaf",
+            "state": {
+              "type": "git-history-view",
+              "state": {},
+              "icon": "history",
+              "title": "History"
+            }
           }
         ],
         "currentTab": 5
@@ -194,7 +204,7 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "4273acbe011ef8c9",
+  "active": "898e1b481fd5cb91",
   "lastOpenFiles": [
     "WRAQbuilding20231121.pdf",
     "WRAQ_installation.md"

@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "README.md",
+                "file": "WRAQ_installation.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "README"
+              "title": "WRAQ_installation"
             }
           }
         ]
@@ -94,7 +94,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "README.md",
+                "file": "WRAQ_installation.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -104,7 +104,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "READMEへのバックリンク"
+              "title": "WRAQ_installationへのバックリンク"
             }
           },
           {
@@ -113,12 +113,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "README.md",
+                "file": "WRAQ_installation.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "READMEからのアウトゴーイングリンク"
+              "title": "WRAQ_installationからのアウトゴーイングリンク"
             }
           },
           {
@@ -156,13 +156,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "README.md",
+                "file": "WRAQ_installation.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "READMEのアウトライン"
+              "title": "WRAQ_installationのアウトライン"
             }
           },
           {
@@ -190,7 +190,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 433.5
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -204,10 +204,10 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "898e1b481fd5cb91",
+  "active": "4273acbe011ef8c9",
   "lastOpenFiles": [
     "WRAQ_installation.md",
-    "README.md",
-    "WRAQbuilding20231121.pdf"
+    "WRAQbuilding20231121.pdf",
+    "README.md"
   ]
 }
